@@ -3,13 +3,13 @@
 # NOTION_TOKEN and NOTION_DATABASE_ID live in GitHub Actions Secrets / your local .env instead.
 
 site:
-  title: "My Notion Blog"
+  title: "fisher98kim"
 
   # Project page (username.github.io/repo) -> "/repo". User/Org page (username.github.io) -> "".
-  base_path: "/notion2github"
+  base_path: ""
 
   # Everything below is optional. Leave blank to hide that part of the sidebar.
-  tagline: "Notion Database to Github Page!"
+  tagline: "personal archives"
   avatar: "https://github.com/fisher98kim.png"
   github_url: "https://github.com/fisher98kim"
   email: "fisher98kim@gmail.com"
