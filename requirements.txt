@@ -1,0 +1,7 @@
+notion-client
+jinja2
+requests
+python-dotenv
+pyyaml
+pagefind
+pagefind_bin

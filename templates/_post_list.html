@@ -1,0 +1,17 @@
+<div class="vstack gap-4" data-pagefind-ignore>
+{% for post in posts %}
+  <article class="post-item pb-4 border-bottom">
+    <a class="text-decoration-none post-item-title" href="{{ base_path }}/posts/{{ post.slug }}/">
+      <h2 class="h5 mb-1">{{ post.title }}</h2>
+    </a>
+    {% if post.summary %}<p class="text-body-secondary small mb-1">{{ post.summary }}</p>{% endif %}
+    <div class="text-body-secondary small mb-0 post-item-meta">
+      {% if post.category %}<div class="post-item-meta-row"><a class="badge text-bg-light text-body-secondary text-decoration-none" href="{{ base_path }}/categories/{{ post.category.slug }}/"><i class="bi bi-folder-fill"></i> {{ post.category.name }}</a></div>{% endif %}
+      {% if post.tags %}<div class="post-item-meta-row">{% for tag in post.tags %}<a class="badge text-bg-light text-body-secondary text-decoration-none" href="{{ base_path }}/tags/{{ tag.slug }}/"><i class="bi bi-tag-fill"></i> {{ tag.name }}</a>{% endfor %}</div>{% endif %}
+      <div class="post-item-meta-row"><span><i class="bi bi-calendar3"></i> {{ post.date }}</span></div>
+    </div>
+  </article>
+{% else %}
+  <p class="text-body-secondary">No posts yet.</p>
+{% endfor %}
+</div>
