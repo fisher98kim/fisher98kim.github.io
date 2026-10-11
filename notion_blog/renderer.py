@@ -149,7 +149,9 @@ def _render_block(block: dict) -> str:
 
     if btype == "paragraph":
         text = rich_text_to_html(data["rich_text"])
-        return f"<p>{text}</p>" if text else ""
+        # An empty paragraph is how Notion represents a blank line; keep it
+        # as a one-line spacer instead of dropping it.
+        return f"<p>{text}</p>" if text else '<p class="blank-line">&nbsp;</p>'
 
     if btype in ("heading_1", "heading_2", "heading_3"):
         level = btype[-1]
